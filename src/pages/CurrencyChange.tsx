@@ -1,11 +1,12 @@
 import { useState, useMemo, useEffect } from "react";
-import { Stack, Flex, HStack } from "@chakra-ui/react";
+import { Stack, Flex, HStack, Text, Box } from "@chakra-ui/react";
 import AmountInput from "../components/AmountInput";
 import CurrencySelector from "../components/CurrencySelector";
 import ConversionTitle from "../components/conversionTitle";
 import ConversionExchange from "../components/ConversionAmount";
 import InformativeBanner from "../components/informativeBanner";
 import useRates from "../hooks/useRates";
+import { formatDate } from "../utils/formatDate";
 
 const CurrencyChange = () => {
   const [baseAmount, setBaseAmount] = useState<number>(1);
@@ -43,6 +44,10 @@ const CurrencyChange = () => {
     setFromCurrency(toCurrency);
     setToCurrency(fromCurrency);
   };
+
+  const date = rates?.date;
+
+  const formattedDate = formatDate(date);
 
   if (error) {
     return <div>Error: {error}</div>;
@@ -109,10 +114,30 @@ const CurrencyChange = () => {
               <InformativeBanner
                 fromCurrency={fromCurrency}
                 toCurrency={toCurrency}
+                formattedDate={formattedDate}
               />
             </HStack>
           </Stack>
         </Flex>
+      </Stack>
+      <Stack 
+      display={{base:'flex', md:'none'}}
+      marginTop={{base:'350', sm:'250'}}
+      alignItems={'flex-start'}
+      marginLeft={10}
+      maxWidth={{base:'290px', sm:'max-content'}}
+      >
+      <Text fontSize={'12px'} lineHeight={'36px'} color={'#757575'}>
+        <Box as='span' textDecoration='underline'>
+          {fromCurrency}
+        </Box>
+        {" to "}
+        <Box as='span' textDecoration='underline'>
+          {toCurrency}
+        </Box>
+        {" conversion — Last updated "}
+        {formattedDate} 19:17 UTC
+      </Text>
       </Stack>
     </>
   );

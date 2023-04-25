@@ -20,12 +20,13 @@ const ConversionExchange: React.FC<Props> = ({
   const currencyRates: number | undefined = rates?.rates[toCurrency];
 
   return (
-    <VStack padding={'0 !important'} alignItems={'flex-star'}>
+    <VStack padding={'0 !important'} alignItems={'flex-start'}>
       <Text
         fontWeight={'bold'}
         fontSize={{ base: '24px', sm: '32px' }}
         lineHeight={'36px'}
         color={'#000000'}
+        maxWidth={{base:'250px', sm:'300px'}}
       >
         {baseAmount === null
           ? "Calculating conversion rates..."

@@ -1,19 +1,14 @@
 import { Stack, VStack, Text, Box } from "@chakra-ui/react";
 import React from "react";
-import useRates from "../hooks/useRates";
-import { formatDate } from "../utils/formatDate";
 
 type Props = {
   fromCurrency: string;
   toCurrency: string;
+  formattedDate: string;
 };
 
-const InformativeBanner: React.FC<Props> = ({ fromCurrency, toCurrency }) => {
-  const { response } = useRates({ baseCurrency: fromCurrency });
+const InformativeBanner: React.FC<Props> = ({ fromCurrency, toCurrency, formattedDate }) => {
 
-  const date = response?.date;
-
-  const formattedDate = formatDate(date);
 
   return (
     <VStack

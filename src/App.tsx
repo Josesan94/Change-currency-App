@@ -2,7 +2,7 @@ import {
   Container,
 } from "@chakra-ui/react";
 import { NavigationBar } from "./components/navBar";
-import CurrencyChange from "./page/CurrencyChange";
+import CurrencyChange from "./pages/CurrencyChange";
 
 function App() {
   return (
