@@ -23,7 +23,7 @@ const AmountInput: React.FC<Props> = ({ value, onChange }) => {
           <Input
             type="number"
             min={0}
-            value={value}
+            value={value.toString()}
             onChange={(e) => onChange(parseFloat(e.target.value))}
             paddingLeft="2rem"
             fontWeight="bold"

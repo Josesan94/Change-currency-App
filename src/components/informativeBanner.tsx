@@ -1,4 +1,4 @@
-import { Stack, VStack, Text } from "@chakra-ui/react";
+import { Stack, VStack, Text, Box } from "@chakra-ui/react";
 import React from "react";
 import useRates from "../hooks/useRates";
 import { formatDate } from "../utils/formatDate";
@@ -36,7 +36,14 @@ const InformativeBanner: React.FC<Props> = ({ fromCurrency, toCurrency }) => {
         </Text>
       </Stack>
       <Text fontSize={"12px"} lineHeight={"36px"} color={"#757575"}>
-        {fromCurrency} to {toCurrency} Dollar conversion — Last updated{" "}
+        <Box as="span" textDecoration="underline">
+          {fromCurrency}
+        </Box>
+        {" to "}
+        <Box as="span" textDecoration="underline">
+          {toCurrency}
+        </Box>
+        {" conversion — Last updated "}
         {formattedDate} 19:17 UTC
       </Text>
     </VStack>

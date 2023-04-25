@@ -31,9 +31,7 @@ const ConversionExchange: React.FC<Props> = ({
           ? "Calculating conversion rates..."
           : isNaN(baseAmount) || isNaN(Number(convertedAmount))
           ? "You need to introduce a value in the input"
-          : `${baseAmount.toFixed(
-              2
-            )} ${fromCurrency} = ${convertedAmount} ${toCurrency}`}
+          : `${baseAmount.toFixed(2)} ${fromCurrency} = ${convertedAmount?.toFixed(7)} ${toCurrency}`}
       </Text>
       <Text fontSize={"16px"} lineHeight={"36px"} color={"#757575"}>
         1 {fromCurrency} = {currencyRates?.toFixed(6)} {toCurrency}
