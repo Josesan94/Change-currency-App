@@ -16,17 +16,17 @@ interface Props {
 const AmountInput: React.FC<Props> = ({ value, onChange }) => {
   return (
     <>
-      <VStack marginTop={"0.5rem"} width={["279px"]} alignItems={"start"}>
-        <Text fontWeight={"bold"}>Amount</Text>
+      <VStack marginTop={'0.5rem'} width={['279px']} alignItems={'start'}>
+        <Text fontWeight={'bold'}>Amount</Text>
         <InputGroup>
-          <InputLeftElement pointerEvents="none" children={<FaDollarSign />} />
+          <InputLeftElement pointerEvents='none' children={<FaDollarSign />} />
           <Input
-            type="number"
+            type='number'
             min={0}
             value={value.toString()}
             onChange={(e) => onChange(parseFloat(e.target.value))}
-            paddingLeft="2rem"
-            fontWeight="bold"
+            paddingLeft='2rem'
+            fontWeight='bold'
           />
         </InputGroup>
       </VStack>

@@ -20,20 +20,21 @@ const ConversionExchange: React.FC<Props> = ({
   const currencyRates: number | undefined = rates?.rates[toCurrency];
 
   return (
-    <VStack padding={"0 !important"} alignItems={"flex-start"}>
+    <VStack padding={'0 !important'} alignItems={'flex-star'}>
       <Text
-        fontWeight={"bold"}
-        fontSize={{ base: "24px", sm: "32px" }}
-        lineHeight={"36px"}
-        color={"#000000"}
+        fontWeight={'bold'}
+        fontSize={{ base: '24px', sm: '32px' }}
+        lineHeight={'36px'}
+        color={'#000000'}
       >
         {baseAmount === null
           ? "Calculating conversion rates..."
           : isNaN(baseAmount) || isNaN(Number(convertedAmount))
           ? "You need to introduce a value in the input"
-          : `${baseAmount.toFixed(2)} ${fromCurrency} = ${convertedAmount?.toFixed(7)} ${toCurrency}`}
+          : `${baseAmount.toFixed(2)} ${fromCurrency} = ${convertedAmount === null ? "calculating..." :  `${convertedAmount.toFixed(7)} ${toCurrency}`
+        } `}
       </Text>
-      <Text fontSize={"16px"} lineHeight={"36px"} color={"#757575"}>
+      <Text fontSize={'16p'} lineHeight={'36px'} color={'rgba(117, 117, 117, 1)'}>
         1 {fromCurrency} = {currencyRates?.toFixed(6)} {toCurrency}
       </Text>
     </VStack>

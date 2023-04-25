@@ -9,13 +9,13 @@ const SwapCurrencyButton: React.FC<Props> = (props) => {
   const { onClick } = props;
   return (
     <VStack
-      alignItems={"flex-start"}
-      width={["95%", "auto"]}
+      alignItems={'flex-start'}
+      width={['95%', 'auto']}
       paddingTop={{ base: 0, sm: 5 }}
     >
       <Button
-        backgroundColor={"#FFFF"}
-        _hover={{ bg: "#FFFF" }}
+        backgroundColor={'#FFFF'}
+        _hover={{ bg: '#FFFF' }}
         onClick={onClick}
       >
         <svg

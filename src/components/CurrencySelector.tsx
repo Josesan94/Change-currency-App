@@ -1,5 +1,5 @@
 import React from "react";
-import { Select, VStack, Text, Stack } from "@chakra-ui/react";
+import { Select, VStack, Text } from "@chakra-ui/react";
 import SwapCurrencyButton from "./SwapCurrencyButton";
 
 interface Props {
@@ -21,12 +21,13 @@ const CurrencySelector: React.FC<Props> = ({
 }) => {
   return (
     <>
-      <VStack width="279px" alignItems={"start"}>
-        <Text fontWeight={"bold"}>From</Text>
+      <VStack width='279px' alignItems={'start'}>
+        <Text fontWeight={'bold'}>From</Text>
         <Select
           value={selectedCurrency}
           onChange={(e) => setFromCurrency(e.target.value)}
-          fontWeight={"bold"}
+          fontWeight={'bold'}
+          color={'#06081A'}
         >
           {currencies.map((currency) => (
             <option key={currency} value={currency}>
@@ -36,12 +37,12 @@ const CurrencySelector: React.FC<Props> = ({
         </Select>
       </VStack>
       <SwapCurrencyButton onClick={() => handleSwapCurrencies()} />
-      <VStack width="279px" alignItems={"start"}>
-        <Text fontWeight={"bold"}>To</Text>
+      <VStack width='279px' alignItems={'start'}>
+        <Text fontWeight={'bold'}>To</Text>
         <Select
           value={toCurrency}
           onChange={(e) => setToCurrency(e.target.value)}
-          fontWeight={"bold"}
+          fontWeight={'bold'}
         >
           {currencies.map((currency) => (
             <option key={currency} value={currency}>
