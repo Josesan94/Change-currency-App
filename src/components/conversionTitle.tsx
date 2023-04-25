@@ -27,6 +27,7 @@ const ConversionTitle: React.FC<Props> = ({
         fontSize={"32px"}
         lineHeight={"32px"}
         color={"#FFFFFF"}
+        fontWeight={'bold'}
       >
         {isNaN(Number(baseAmount)) ? " " : baseAmount} {fromCurrency} to{" "}
         {toCurrency} - Convert {fromCurrency} to {toCurrency}

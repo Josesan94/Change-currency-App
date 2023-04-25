@@ -13,7 +13,7 @@ export const NavigationBar = () => {
         margin={0}
       >
         <Flex flex={{ base: 1 }} justify={{ base: 'flex-start', md: 'start' }}>
-          <Text paddingLeft={5} fontSize={'22px'} lineHeight={'20px'} >Currency Change</Text>
+          <Text paddingLeft={{base: 2, sm: 5}} fontSize={'22px'} lineHeight={'20px'} >Currency Change</Text>
         </Flex>
       </Flex>
     </Box>
