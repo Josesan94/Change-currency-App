@@ -11,7 +11,6 @@ const BASE_URL = "https://api.vatcomply.com";
 const useRates = (props: Props) => {
   const { baseCurrency } = props;
   const [response, setResponse] = useState<ratesObject>();
-  const [error, setError] = useState("");
   const [loading, setloading] = useState(true);
 
   const getRates = async (baseCurrency: string) => {
@@ -34,7 +33,6 @@ const useRates = (props: Props) => {
 
   return {
     response,
-    error,
     loading,
   };
 };

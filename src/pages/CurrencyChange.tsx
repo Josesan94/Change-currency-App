@@ -16,7 +16,6 @@ const CurrencyChange = () => {
 
   const {
     response: rates,
-    error,
     loading,
   } = useRates({ baseCurrency: fromCurrency });
 
@@ -49,10 +48,9 @@ const CurrencyChange = () => {
 
   const formattedDate = formatDate(date);
 
-  if (error) {
-    return <div>Error: {error}</div>;
-  }
 
+
+  
   // if (loading) {
   //   return <div>Loading...</div>;
   // }
